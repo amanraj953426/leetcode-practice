@@ -7,16 +7,15 @@ class Solution {
             char bracket = s.charAt(i);
             if(bracket == '(' || bracket == '[' || bracket == '{') {
                 myStack.push(bracket);
-            } else if(!myStack.isEmpty()) {
-                if(bracket == ')' && myStack.peek() == '(') {
-                    myStack.pop();
-                } else if(bracket == ']' && myStack.peek() == '[') {
-                    myStack.pop();
-                } else if(bracket == '}' && myStack.peek() == '{') {
-                    myStack.pop();
-                } else {
-                    return false;
-                }
+            } else if(
+                !myStack.isEmpty() &&
+                (
+                    (bracket == ')' && myStack.peek() == '(') ||
+                    (bracket == ']' && myStack.peek() == '[') ||
+                    (bracket == '}' && myStack.peek() == '{')
+                )
+            ) {
+                myStack.pop();
             } else {
                 return false;
             }
