@@ -9,15 +9,23 @@ class Solution {
 
         Map<Character, Integer> mySet = new HashMap<>(); //Initialize HashMap
 
-        
+
         for(int right=0; right<s.length(); right++){
+            
             char currentChar = s.charAt(right);
+
             if (mySet.containsKey(currentChar)){
                 left = Math.max(left, mySet.get(currentChar)+1);
             }
+
+
+
             mySet.put(currentChar, right);
             maxLength = Math.max(maxLength, right - left +1);
         }
+
+
+
         return maxLength;
 }
 }
