@@ -28,14 +28,10 @@ class Solution {
                 sum = sum + l2.val;
                 l2 = l2.next;
             }
-
             carry = sum / 10;
             current.next = new ListNode(sum % 10);
             current = current.next;
         }
-        return dummy.next;
-
-
-        
+        return dummy.next; 
     }
 }
