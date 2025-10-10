@@ -17,9 +17,6 @@ class Solution {
             if (mySet.containsKey(currentChar)){
                 left = Math.max(left, mySet.get(currentChar)+1);
             }
-
-
-
             mySet.put(currentChar, right);
             maxLength = Math.max(maxLength, right - left +1);
         }
